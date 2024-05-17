@@ -1,0 +1,31 @@
+<div class="relative">
+<footer class="sweetspot-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="inline3">
+          <img [src]="logoUrl" alt="Sweetspot Logo" class="footer-logo">
+          <p class="footer-description">{{ description }}</p>
+          </div>
+          <p class="footer-description1">SweetSpot aims to deliver delight to customers' doorsteps by providing a
+            seamless and user-friendly cake-shopping experience. SweetSpot aims to
+            revolutionize the cake delivery industry by offering a comprehensive
+            online platform that simplifies the process of ordering customized cakes
+            and ensures timely delivery.</p>
+        </div>
+        <div class="col-md-4 mt-4">
+          <h3 class="footer-links-title">Links</h3>
+          <ul class="footer-links">
+            <li *ngFor="let link of links">
+              <a [routerLink]="[link.path]">{{ link.label }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 mt-4">
+          <h3 class="footer-legal-title">Legal</h3>
+          <p class="footer-legal">{{ legal }}</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>  

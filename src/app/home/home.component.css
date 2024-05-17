@@ -1,0 +1,194 @@
+.heading {
+    text-align: center;
+    
+  }
+  
+.opening-statement {
+    margin-top: 30px;
+    font-size: 44px; 
+    transition: opacity 1s ease, font-size 01s ease; 
+  }
+  
+  .opening-statement:hover {
+    font-size: 56px; 
+  }
+
+  .section1{
+    margin: 20px;
+    background-color: pink;
+  }
+
+  .section1-container{
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .cake-desc{
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+    font-size: larger;
+    margin-left:100px;
+  }
+
+  .heading1{
+    color:rgb(161, 113, 113);
+    text-align: center;
+  }
+
+  .section2{
+    padding: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent horizontal overflow */
+    width: 100%; /* Adjust width as needed */
+  }
+  
+  .card-page {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth slide transition */
+  }
+  
+  .card {
+    width: 25%; /* Adjust for 3 cards per page */
+    margin: 15px;
+    border: 1px solid #ddd;
+    /* padding: 10px; */
+    border-radius: 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .card img {
+    /* width: 330px; */
+    border-radius: 20px;
+    height: 350px;
+    transition: transform 0.3s ease;
+    object-fit: cover; /* Ensure image fills the container */
+  }
+
+  .card{
+    img:hover{
+      transform: scale(1.04); 
+    }
+  }
+  
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .card:hover .card-content {
+    opacity: 1;
+  }
+
+  .inline1{
+    margin: 20px;
+  }
+
+  .inline2{
+    margin: 20px;
+    /* left: 30px; */
+  }
+
+  .heading2{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* cake card */
+
+  .section3{
+    padding: 20px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+  }
+  .card-container1 {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .card-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  }
+  
+  .card1 {
+    width: 23%; /* Adjust for 4 cards in a row */
+    margin: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    
+  }
+  
+  .card1 img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    transition: width 0.2s ease, opacity 0.2s ease;
+  }
+
+  .card1 img:hover{
+    width: 95%;
+    opacity: 0.8;
+    
+  }
+  
+  .card-content1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    text-align: left;
+  }
+  
+  .card-content1 h4 {
+    margin-bottom: 5px;
+  }
+  
+  .price {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .cart-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgb(184, 131, 131);
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .cart-button:hover {
+    background-color: rgb(116, 85, 85);
+  }
+
+  /* .section4{
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+  } */
+
+ 

@@ -1,0 +1,26 @@
+<div class="cakes-container">
+    <div class="inline">
+        <h2>Cakes</h2>
+        <img src="./assets/cakebg.jpg">
+    </div>
+    <p class="cake-paragraph">Any celebration, whether a cozy gathering or an extravagant party, is incomplete without cake!
+         We offer a wide range of handcrafted speciality cakes that are a treat to the eyes and also the taste buds.
+    </p>
+
+    <div class="card-container1">
+        <div *ngFor="let row of [0, 1, 2,3,4]; let rowIndex = index" class="card-row">
+          <div
+            *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
+            class="card1"
+          >
+            <img [src]="cake.image" alt="Cake Image" />
+            <div class="card-content1">
+              <h4>{{ cake.title }}</h4>
+              <span class="price">₹{{ cake.price }}</span>
+            </div>
+            <button class="cart-button" (click)="addToCart(cake)"><i class="bi bi-cart-fill"></i></button>
+          </div>
+        </div>
+      </div>
+
+</div>

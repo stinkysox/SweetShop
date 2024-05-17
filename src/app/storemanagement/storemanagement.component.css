@@ -1,0 +1,18 @@
+.container{
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+.heading{
+    color: rgb(114, 33, 33);
+    font-size: 54px;
+}
+
+.header{
+   margin-bottom: 25px;
+}
+
+.card-font{
+    font-size: 20px;
+    color: rgb(66, 65, 65);
+}

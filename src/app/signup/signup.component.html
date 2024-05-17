@@ -1,0 +1,23 @@
+<!-- <p>signup works!</p> -->
+<div class="signup-container">
+    <img src="./assets/ss.png" alt="logo" class="img1" />
+  <h2 class="sign">Sign up</h2>
+  <p class="reg">Already have an account?<a routerLink="/login">Login!</a></p>
+  <!-- <p class="reg"></p> -->
+  <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+    <div class="form-group">
+        <input class="unp" type="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" formControlName="email" required>
+      </div>
+    <div class="form-group">
+      <input class="unp" type="text" id="username" name="username" placeholder="Username" [(ngModel)]="username" formControlName="username" required>
+    </div>
+    <div class="form-group">
+        <input class="unp" type="fullname" id="fulname" name="fullname" placeholder="Fullname" [(ngModel)]="fullname" formControlName="fullname" required>
+      </div>
+    <div class="form-group">
+      <input class="unp" type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" formControlName="password" required>
+    </div>
+    <div class="error-message" *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+    <button class="signup" type="submit">Register Account</button>
+  </form>
+</div>

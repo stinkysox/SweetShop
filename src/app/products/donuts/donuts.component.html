@@ -1,0 +1,26 @@
+<div class="cakes-container">
+    <div class="inline">
+        <h2>Donut</h2>
+        <img src="./assets/donut/donutbg.webp">
+    </div>
+    <p class="cake-paragraph">Indulge in our heavenly donuts, a sweet and satisfying treat that will leave you craving for more.
+         Made with the finest ingredients and a whole lot of love, our donuts are a delicious way to brighten up your day.
+    </p>
+
+    <div class="card-container1">
+        <div *ngFor="let row of [0, 1]; let rowIndex = index" class="card-row">
+          <div
+            *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
+            class="card1"
+          >
+            <img [src]="cake.image" alt="Cake Image" />
+            <div class="card-content1">
+              <h4>{{ cake.title }}</h4>
+              <span class="price">₹{{ cake.price }}</span>
+            </div>
+            <button class="cart-button" (click)="addToCart(cake)"><i class="bi bi-cart-fill"></i></button>
+          </div>
+        </div>
+      </div>
+
+</div>

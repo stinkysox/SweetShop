@@ -1,0 +1,173 @@
+<!-- Navigation bar -->
+<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-2 px-4" routerLink=""
+      ><i class="bi bi-cake-fill"></i> SweetSpot</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-2 fs-4">
+        <li class="nav-item px-2">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/products">Products</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/customize">Customize</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/cart">Cart</a>
+        </li>
+        <li class="nav-item dropdown px-2">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Profile
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/login">SignIn</a></li>
+            <li><a class="dropdown-item" routerLink="/signup">SignUp</a></li>
+            <li>
+              <a
+                class="dropdown-item text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                >LogOut</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button
+            class="btn btn-outline-success"
+            style="background-color: #e3f2fd"
+            type="submit"
+          >
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<div class="main-body">
+  <div class="heading">
+    <h1 class="opening-statement">Delivering Delight At Your DoorStep</h1>
+  </div>
+
+  <div class="section2">
+    <div class="card-container">
+      <div
+        *ngFor="let page of [0, 1, 2, 3]; let pageIndex = index"
+        class="card-page"
+      >
+        <div
+          *ngFor="let card of cards.slice(pageIndex * 4, (pageIndex + 1) * 4)"
+          class="card"
+        >
+          <img [src]="card.image" alt="Card Image" />
+          <div class="card-content">
+            <h2>{{ card.title }}</h2>
+            <p>{{ card.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section1">
+    <div class="section1-container">
+      <h1 class="heading1">CAKES</h1>
+      <p class="cake-desc">
+        Any celebration, whether a cozy gathering or an extravagent party, is
+        incomplete without cake! We offer a wide range of handcrafted speciality
+        cakes that are a treat to the eyes and also the taste buds.
+      </p>
+    </div>
+  </div>
+
+  <div class="section3">
+    <div class="heading2">
+      <div class="inline1 h1 fs-1">OUR BEST SELLERS</div>
+      <div class="inline2">
+        <a routerLink="/products"
+          ><button type="button" class="btn btn-outline-danger fs-3">
+            View All
+          </button></a
+        >
+      </div>
+    </div>
+    <div class="card-container1">
+      <div *ngFor="let row of [0, 1]; let rowIndex = index" class="card-row">
+        <div
+          *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
+          class="card1"
+        >
+          <img [src]="cake.image" alt="Cake Image" />
+          <div class="card-content1">
+            <h4>{{ cake.title }}</h4>
+            <span class="price">₹{{ cake.price }}</span>
+          </div>
+          <button class="cart-button" (click)="addToCart(cake)"><i class="bi bi-cart-fill"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">LOGOUT</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Are you sure, you wanna logout?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-danger">LogOut</button>
+      </div>
+    </div>
+  </div>
+</div>

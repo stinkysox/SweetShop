@@ -1,0 +1,114 @@
+ <!-- Navigation bar -->
+ <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-2 px-4" routerLink=""
+      ><i class="bi bi-cake-fill"></i> SweetSpot</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-2 fs-4">
+        <li class="nav-item px-2">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/products">Products</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/customize">Customize</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/cart">Cart</a>
+        </li>
+        <li class="nav-item dropdown px-2">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Profile
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/login">SignIn</a></li>
+            <li><a class="dropdown-item" routerLink="/signup">SignUp</a></li>
+            <li>
+              <a
+                class="dropdown-item text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                >LogOut</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button
+            class="btn btn-outline-success"
+            style="background-color: #e3f2fd"
+            type="submit"
+          >
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<h1>Order Tracking</h1>
+
+<div class="flex">
+
+<div id="m_map" style="height: 500px;"></div>
+
+<div class="map-details">
+<div class="start">
+    <label for="start" class="fs-3">Start:</label>
+    <input type="text" class="form-control mt-1" id="start floatingInputGroup1" placeholder="Enter starting location">
+</div>
+<div class="end">
+    <label for="end" class="fs-3">End:</label>
+    <input type="text" class="form-control mt-1" id="end floatingInputGroup1" placeholder="Enter destination">   
+</div>
+<button type="button" class="btn route btn-outline-primary" (click)="calculateAndDisplayRoute()">Get Route</button>
+<div *ngIf="!error" class="distance">
+    <span class="fs-3">Distance:</span> {{ distance }}
+</div>
+<div *ngIf="!error" class="duration">
+    <span class="fs-3">Duration:</span> {{ duration }}
+</div>
+<div>
+  Order Status: Delivered
+</div>
+</div>
+
+</div>
+<div class="popup" *ngIf="isPopupVisible">
+<!-- <div class="popup"> -->
+    <div class="popup-content">
+      <h2>Your Order Has Been Delivered!</h2>
+      <button (click)="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+  

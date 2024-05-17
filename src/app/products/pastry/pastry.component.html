@@ -1,0 +1,26 @@
+<div class="cakes-container">
+    <div class="inline">
+        <h2>Pastry</h2>
+        <img src="./assets/pastry/pastrybg.jpg">
+    </div>
+    <p class="cake-paragraph">'A slice of heaven' is how our exquisite range of pastries is described - 
+        from the classic red velvet to chocolate truffle, from the fresh cream pineapple to baked cheesecake.
+    </p>
+
+    <div class="card-container1">
+        <div *ngFor="let row of [0, 1, 2,3]; let rowIndex = index" class="card-row">
+          <div
+            *ngFor="let pastry of pastry.slice(rowIndex * 4, (rowIndex + 1) * 4)"
+            class="card1"
+          >
+            <img [src]="pastry.image" alt="Pastry Image" />
+            <div class="card-content1">
+              <h4>{{ pastry.title }}</h4>
+              <span class="price">₹{{ pastry.price }}</span>
+            </div>
+            <button class="cart-button" (click)="addToCart(pastry)"><i class="bi bi-cart-fill"></i></button>
+          </div>
+        </div>
+      </div>
+
+</div>

@@ -1,0 +1,109 @@
+  <!-- Navigation bar -->
+<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-2 px-4" routerLink=""
+      ><i class="bi bi-cake-fill"></i> SweetSpot</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-2 fs-4">
+        <li class="nav-item px-2">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/products">Products</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/customize">Customize</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/cart">Cart</a>
+        </li>
+        <li class="nav-item dropdown px-2">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Profile
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/login">SignIn</a></li>
+            <li><a class="dropdown-item" routerLink="/signup">SignUp</a></li>
+            <li>
+              <a
+                class="dropdown-item text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                >LogOut</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button
+            class="btn btn-outline-success"
+            style="background-color: #e3f2fd"
+            type="submit"
+          >
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </span>
+    </div>
+  </div>
+</nav>
+  
+  <div class="cart-container">
+    <h1>My Cart <span class="fs-4">({{ totalItems }} items)</span> </h1>
+    <div class="cart-empty" *ngIf="cartItems.length === 0">
+      <h3>Your cart is currently empty.</h3>
+      <p>Looks like you have not any choice yet.</p>
+      <a routerLink=""><button type="button" class="btn btn-outline-danger">Go To Home</button></a>
+    </div>
+  
+    <div *ngFor="let item of cartItems" class="cart-item">
+    <div>
+      <img [src]="item.image" alt="{{ item.title }}">
+    </div>
+    <div class="item-details">
+      <h3>{{ item.title }}</h3>
+      <h5>Quantity: {{ item.quantity }}</h5>
+      <input type="number" class="qty-input" [(ngModel)]="item.quantity" min="1">
+      <p class="fs-5 mt-2">Price: {{ item.price }} x {{ item.quantity }}</p>
+      <button type="button" class="btn btn-outline-danger" (click)="removeFromCart(item.id)">Remove</button>
+    </div>
+    </div>
+  
+    <div class="cart-totals mt-3 fs-2 text-center">
+      <p>Total Price: Rs.{{ calculateTotal() }}</p>
+    </div>
+
+    <div class="checkout-btn text-center">
+    <a routerLink="/checkout"><button [disabled]="cartItems.length === 0" type="button" class="btn btn-outline-dark">Checkout</button>
+  </a></div>
+  </div>
+
+
+  <app-footer></app-footer>
+  
