@@ -1,9 +1,10 @@
-<!-- Navigation bar -->
 <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand fs-2 px-4" routerLink=""
-      ><i class="bi bi-cake-fill"></i> SweetSpot</a
-    >
+    <img
+      class="nav-headimage"
+      src="https://i.postimg.cc/7ZJpqyTB/image.png"
+      alt="SweetSpot Logo"
+    />
     <button
       class="navbar-toggler"
       type="button"
@@ -47,8 +48,9 @@
                 class="dropdown-item text-danger"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                >LogOut</a
               >
+                LogOut
+              </a>
             </li>
           </ul>
         </li>
@@ -76,7 +78,7 @@
 
 <div class="main-body">
   <div class="heading">
-    <h1 class="opening-statement">Delivering Delight At Your DoorStep</h1>
+    <h3 class="opening-statement">Delivering Delight At Your Door Step</h3>
   </div>
 
   <div class="section2">
@@ -90,10 +92,8 @@
           class="card"
         >
           <img [src]="card.image" alt="Card Image" />
-          <div class="card-content">
-            <h2>{{ card.title }}</h2>
-            <p>{{ card.description }}</p>
-          </div>
+          <h2 class="cake-title">{{ card.title }}</h2>
+          <p>{{ card.description }}</p>
         </div>
       </div>
     </div>
@@ -101,25 +101,20 @@
 
   <div class="section1">
     <div class="section1-container">
-      <h1 class="heading1">CAKES</h1>
       <p class="cake-desc">
-        Any celebration, whether a cozy gathering or an extravagent party, is
-        incomplete without cake! We offer a wide range of handcrafted speciality
-        cakes that are a treat to the eyes and also the taste buds.
+        The goal of this project is to develop an innovative e-commerce
+        platform, SweetSpot, dedicated to cake delivery services. The platform
+        will offer customers the convenience of ordering customized cakes online
+        and tracking their deliveries in real-time. SweetSpot aims to deliver
+        delight to customers' doorsteps by providing a seamless and
+        user-friendly cake-shopping experience.
       </p>
     </div>
   </div>
 
   <div class="section3">
     <div class="heading2">
-      <div class="inline1 h1 fs-1">OUR BEST SELLERS</div>
-      <div class="inline2">
-        <a routerLink="/products"
-          ><button type="button" class="btn btn-outline-danger fs-3">
-            View All
-          </button></a
-        >
-      </div>
+      <div class="cake-theme">Themed Cakes</div>
     </div>
     <div class="card-container1">
       <div *ngFor="let row of [0, 1]; let rowIndex = index" class="card-row">
@@ -132,7 +127,9 @@
             <h4>{{ cake.title }}</h4>
             <span class="price">₹{{ cake.price }}</span>
           </div>
-          <button class="cart-button" (click)="addToCart(cake)"><i class="bi bi-cart-fill"></i></button>
+          <button class="cart-button" (click)="addToCart(cake)">
+            <i class="bi bi-cart-fill"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -141,8 +138,6 @@
 
 <app-footer></app-footer>
 
-
-<!-- Modal -->
 <div
   class="modal fade"
   id="exampleModal"
@@ -161,7 +156,7 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="modal-body">Are you sure, you wanna logout?</div>
+      <div class="modal-body">Are you sure, you want to logout?</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Cancel
