@@ -1,18 +1,20 @@
 <div class="cakes-container">
   <div class="top-container">
-    <h2>Brownies</h2>
+    <h2>Theme Cakes</h2>
     <img
-      src="https://i.pinimg.com/564x/b1/45/bf/b145bff5bbf5d74f2e94d68e6b5282ae.jpg"
+      src="https://i.pinimg.com/564x/74/f0/9d/74f09d70cbd33b51506635a2a002c98d.jpg"
     />
+
     <p class="cake-paragraph">
-      Experience the ultimate indulgence with our irresistible brownies - rich,
-      fudge, and oh-so-chocolatey! Each bite is a moment of pure bliss, a
-      heavenly delight that will melt in your mouth.
+      Elevate your celebrations with our enchanting themed cakes, meticulously
+      crafted to reflect your unique style and interests. From whimsical fairy
+      tales to sophisticated designs, each themed cake is a masterpiece of
+      creativity and taste.
     </p>
   </div>
 
   <div class="card-container1">
-    <div *ngFor="let row of [0]; let rowIndex = index" class="card-row">
+    <div *ngFor="let row of [0, 1]; let rowIndex = index" class="card-row">
       <div
         *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
         class="card1"

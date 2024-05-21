@@ -1,26 +1,32 @@
 <div class="cakes-container">
-    <div class="inline">
-        <h2>Donut</h2>
-        <img src="./assets/donut/donutbg.webp">
-    </div>
-    <p class="cake-paragraph">Indulge in our heavenly donuts, a sweet and satisfying treat that will leave you craving for more.
-         Made with the finest ingredients and a whole lot of love, our donuts are a delicious way to brighten up your day.
+  <div class="top-container">
+    <h2>Donut</h2>
+    <img
+      src="https://i.pinimg.com/564x/66/75/fe/6675fe80cec7c9ae75aedeb53a20134d.jpg"
+    />
+    <p class="cake-paragraph">
+      Delight in the deliciousness of our donuts, where every bite brings a
+      burst of flavor and joy. Our bakery offers a tempting variety of donuts,
+      from classic glazed to creatively topped specialties. Made fresh daily
+      with premium ingredients,
     </p>
+  </div>
 
-    <div class="card-container1">
-        <div *ngFor="let row of [0, 1]; let rowIndex = index" class="card-row">
-          <div
-            *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
-            class="card1"
-          >
-            <img [src]="cake.image" alt="Cake Image" />
-            <div class="card-content1">
-              <h4>{{ cake.title }}</h4>
-              <span class="price">₹{{ cake.price }}</span>
-            </div>
-            <button class="cart-button" (click)="addToCart(cake)"><i class="bi bi-cart-fill"></i></button>
-          </div>
+  <div class="card-container1">
+    <div *ngFor="let row of [0, 1]; let rowIndex = index" class="card-row">
+      <div
+        *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
+        class="card1"
+      >
+        <img [src]="cake.image" alt="Cake Image" />
+        <div class="card-content1">
+          <h4>{{ cake.title }}</h4>
+          <span class="price">₹{{ cake.price }}</span>
         </div>
+        <button class="cart-button" (click)="addToCart(cake)">
+          <i class="bi bi-cart-fill"></i>
+        </button>
       </div>
-
+    </div>
+  </div>
 </div>

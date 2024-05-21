@@ -1,18 +1,19 @@
 <div class="cakes-container">
   <div class="top-container">
-    <h2>Brownies</h2>
+    <h2>Birthday Cakes</h2>
     <img
-      src="https://i.pinimg.com/564x/b1/45/bf/b145bff5bbf5d74f2e94d68e6b5282ae.jpg"
+      src="https://i.pinimg.com/564x/e4/02/91/e402913254feb2540b1481593e314126.jpg"
     />
     <p class="cake-paragraph">
-      Experience the ultimate indulgence with our irresistible brownies - rich,
-      fudge, and oh-so-chocolatey! Each bite is a moment of pure bliss, a
-      heavenly delight that will melt in your mouth.
+      Celebrate life's special moments with our enchanting birthday cakes,
+      designed to make every celebration unforgettable. Our bakery offers a
+      delightful assortment of birthday cakes, from elegant tiered designs to
+      personalized creations.
     </p>
   </div>
 
   <div class="card-container1">
-    <div *ngFor="let row of [0]; let rowIndex = index" class="card-row">
+    <div *ngFor="let row of [0, 1]; let rowIndex = index" class="card-row">
       <div
         *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
         class="card1"

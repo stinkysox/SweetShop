@@ -1,104 +1,106 @@
-<!-- Navigation bar -->
 <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand fs-2 px-4" routerLink=""
-        ><i class="bi bi-cake-fill"></i> SweetSpot</a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarText"
-        aria-controls="navbarText"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-2 fs-4">
-          <li class="nav-item px-2">
-            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
-          </li>
-          <li class="nav-item px-2">
-            <a class="nav-link" routerLink="/products">Products</a>
-          </li>
-          <li class="nav-item px-2">
-            <a class="nav-link" routerLink="/customize">Customize</a>
-          </li>
-          <li class="nav-item px-2">
-            <a class="nav-link" routerLink="/cart">Cart</a>
-          </li>
-          <li class="nav-item dropdown px-2">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Profile
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="/login">SignIn</a></li>
-              <li><a class="dropdown-item" routerLink="/signup">SignUp</a></li>
-              <li>
-                <a
-                  class="dropdown-item text-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                  >LogOut</a
-                >
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <span class="navbar-text">
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button
-              class="btn btn-outline-success"
-              style="background-color: #e3f2fd"
-              type="submit"
-            >
-              <i class="bi bi-search"></i>
-            </button>
-          </form>
-        </span>
-      </div>
+  <div class="container-fluid">
+    <img
+      class="nav-headimage"
+      src="https://i.postimg.cc/7ZJpqyTB/image.png"
+      alt="SweetSpot Logo"
+    />
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-2 fs-4">
+        <li class="nav-item px-2">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/products">Products</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/customize">Customize</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/cart">Cart</a>
+        </li>
+        <li class="nav-item dropdown px-2">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Profile
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/login">SignIn</a></li>
+            <li><a class="dropdown-item" routerLink="/signup">SignUp</a></li>
+            <li>
+              <a
+                class="dropdown-item text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                LogOut
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button
+            class="btn btn-outline-success"
+            style="background-color: #e3f2fd"
+            type="submit"
+          >
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </span>
     </div>
-  </nav>
- <div class="customize-container">
+  </div>
+</nav>
+<div class="product-container">
   <div class="sidebar">
-    <h1>Categories</h1>
+    <h1 class="product-heading">Categories</h1>
     <ul>
       <li>
-        <a [routerLink]="['/customize', 'anniversary']">Anniversary</a>
+        <button [routerLink]="['/customize', 'anniversary']">
+          Wedding Cakes
+        </button>
       </li>
       <li>
-        <a [routerLink]="['/customize', 'shower']">Baby Shower</a>
+        <button [routerLink]="['/customize', 'shower']">Birthday Cakes</button>
       </li>
       <li>
-        <a [routerLink]="['/customize', 'cartoons']">Cartoons</a>
+        <button [routerLink]="['/customize', 'cartoons']">Theme</button>
       </li>
       <li>
-        <a [routerLink]="['/customize', 'diwali']">Diwali</a>
+        <button [routerLink]="['/customize', 'diwali']">New Year</button>
       </li>
       <li>
-        <a [routerLink]="['/customize', 'janmashtami']">Janmashtami</a>
-      </li>
-      <li>
-        <a [routerLink]="['/customize', 'carsbikes']">Cars Bikes</a>
+        <button [routerLink]="['/customize', 'carsbikes']">Christmas</button>
       </li>
     </ul>
   </div>
+
   <div class="container main">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </div>
 </div>
-  <app-footer></app-footer>
+<app-footer></app-footer>

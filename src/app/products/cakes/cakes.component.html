@@ -1,26 +1,35 @@
 <div class="cakes-container">
-    <div class="inline">
-        <h2>Cakes</h2>
-        <img src="./assets/cakebg.jpg">
-    </div>
-    <p class="cake-paragraph">Any celebration, whether a cozy gathering or an extravagant party, is incomplete without cake!
-         We offer a wide range of handcrafted speciality cakes that are a treat to the eyes and also the taste buds.
+  <div class="top-container">
+    <h2>Cakes</h2>
+    <img
+      src="https://i.pinimg.com/564x/44/05/1c/44051cfafe148d7a679a123cd24a01ba.jpg"
+      class="cake-image-cakesc"
+    />
+    <p class="cake-paragraph">
+      Indulge in our delectable cakes, where every bite is a celebration of rich
+      flavors and exquisite craftsmanship. Our bakery offers a delightful array
+      of freshly baked cakes, from classic favorites to innovative creations.
     </p>
+  </div>
 
-    <div class="card-container1">
-        <div *ngFor="let row of [0, 1, 2,3,4]; let rowIndex = index" class="card-row">
-          <div
-            *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
-            class="card1"
-          >
-            <img [src]="cake.image" alt="Cake Image" />
-            <div class="card-content1">
-              <h4>{{ cake.title }}</h4>
-              <span class="price">₹{{ cake.price }}</span>
-            </div>
-            <button class="cart-button" (click)="addToCart(cake)"><i class="bi bi-cart-fill"></i></button>
-          </div>
+  <div class="card-container1">
+    <div
+      *ngFor="let row of [0, 1, 2, 3, 4]; let rowIndex = index"
+      class="card-row"
+    >
+      <div
+        *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
+        class="card1"
+      >
+        <img [src]="cake.image" alt="Cake Image" />
+        <div class="card-content1">
+          <h4>{{ cake.title }}</h4>
+          <span class="price">₹{{ cake.price }}</span>
         </div>
+        <button class="cart-button" (click)="addToCart(cake)">
+          <i class="bi bi-cart-fill"></i>
+        </button>
       </div>
-
+    </div>
+  </div>
 </div>

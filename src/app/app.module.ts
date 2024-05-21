@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; 
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -20,12 +22,11 @@ import { DonutsComponent } from './products/donuts/donuts.component';
 import { BrowniesComponent } from './products/brownies/brownies.component';
 import { CupckaesComponent } from './products/cupckaes/cupckaes.component';
 import { CookiesComponent } from './products/cookies/cookies.component';
-import { AnniversaryComponent } from './customize/anniversary/anniversary.component';
-import { ShowerComponent } from './customize/shower/shower.component';
-import { CartoonsComponent } from './customize/cartoons/cartoons.component';
-import { DiwaliComponent } from './customize/diwali/diwali.component';
-import { JanmashtamiComponent } from './customize/janmashtami/janmashtami.component';
-import { CarsbikesComponent } from './customize/carsbikes/carsbikes.component';
+import { AnniversaryComponent } from './customize/wedding/anniversary.component';
+import { ShowerComponent } from './customize/birthday/shower.component';
+import { CartoonsComponent } from './customize/themecake/cartoons.component';
+import { DiwaliComponent } from './customize/newyear/diwali.component';
+import { CarsbikesComponent } from './customize/christmas/carsbikes.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderdetailsComponent } from './checkout/orderdetails/orderdetails.component';
 import { ContactdetailsComponent } from './checkout/contactdetails/contactdetails.component';
@@ -54,7 +55,6 @@ import { StoremanagementComponent } from './storemanagement/storemanagement.comp
     ShowerComponent,
     CartoonsComponent,
     DiwaliComponent,
-    JanmashtamiComponent,
     CarsbikesComponent,
     CheckoutComponent,
     OrderdetailsComponent,
@@ -64,17 +64,17 @@ import { StoremanagementComponent } from './storemanagement/storemanagement.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    GoogleMapsModule
+    GoogleMapsModule,
   ],
   providers: [
-    // AuthService, 
-    provideClientHydration()
+    // AuthService,
+    provideClientHydration(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
