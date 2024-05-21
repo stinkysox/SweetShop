@@ -1,38 +1,98 @@
 <div class="contact-container mt-4">
-<form #contactForm="ngForm">
+  <form #contactForm="ngForm">
     <h3>Contact Details:</h3>
     <div class="form-group1">
-      <input type="text" class="form-control" id="phone" name="phone" required [(ngModel)]="contact.phone" placeholder="Mobile phone number">
-      </div>
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        name="phone"
+        required
+        [(ngModel)]="contact.phone"
+        placeholder="Mobile phone number"
+      />
+    </div>
     <h3>Shipping Details:</h3>
-    <div class="form-group1"> 
-      <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="contact.name" placeholder="Enter full name">
-      <textarea class="form-control" id="address" name="address" required [(ngModel)]="contact.address" placeholder="Address"></textarea>
-      <input type="text" class="form-control" id="town" name="town" required [(ngModel)]="contact.town" placeholder="Town/City">
-      <input type="number" class="form-control" id="postcode" name="postcode" required [(ngModel)]="contact.postcode" placeholder="Postcode/Zipcode">
-      <textarea class="form-control" id="note" name="note" required [(ngModel)]="contact.note" placeholder="Order Notes:"></textarea>
+    <div class="form-group1">
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        required
+        [(ngModel)]="contact.name"
+        placeholder="Enter full name"
+      />
+      <textarea
+        class="form-control"
+        id="address"
+        name="address"
+        required
+        [(ngModel)]="contact.address"
+        placeholder="Address"
+      ></textarea>
+      <input
+        type="text"
+        class="form-control"
+        id="town"
+        name="town"
+        required
+        [(ngModel)]="contact.town"
+        placeholder="Town/City"
+      />
+      <input
+        class="form-control"
+        id="postcode"
+        name="postcode"
+        required
+        [(ngModel)]="contact.postcode"
+        placeholder="Postcode/Zipcode"
+      />
+      <textarea
+        class="form-control"
+        id="note"
+        name="note"
+        required
+        [(ngModel)]="contact.note"
+        placeholder="Order Notes:"
+      ></textarea>
     </div>
   </form>
-  
-<form [formGroup]="paymentForm" (ngSubmit)="onSubmit()" class="paymentform">
-  <h2>Payment</h2>
-  <p>All transactions are secure and encrypted.</p>
-  <div class="form-group">
-    <label for="cardNumber">Card Number:</label>
-    <input type="text" formControlName="cardNumber" id="cardNumber" required>
-  </div>
-  <div class="form-group">
-    <label for="expiryMonth">Expiry Month:</label>
-    <input type="number" formControlName="expiryMonth" id="expiryMonth" required>
-  </div>
-  <div class="form-group">
-    <label for="expiryYear">Expiry Year:</label>
-    <input type="number" formControlName="expiryYear" id="expiryYear" required>
-  </div>
-  <div class="form-group">
-    <label for="cvc">CVC:</label>
-    <input type="number" formControlName="cvc" id="cvc" required>
-  </div>
-  <button type="submit">Pay Now</button>
-</form>
+
+  <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()" class="paymentform">
+    <h2>Payment</h2>
+    <p>All transactions are secure and encrypted.</p>
+    <div class="form-group">
+      <label for="cardNumber">Card Number:</label>
+      <input
+        type="text"
+        formControlName="cardNumber"
+        id="cardNumber"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="expiryMonth">Expiry Month:</label>
+      <input
+        formControlName="expiryMonth"
+        id="expiryMonth"
+        required
+        placeholder="Enter Month Number"
+      />
+    </div>
+    <div class="form-group">
+      <label for="expiryYear">Expiry Year:</label>
+      <input
+        formControlName="expiryYear"
+        id="expiryYear"
+        required
+        placeholder="Enter Year"
+      />
+    </div>
+    <div class="form-group">
+      <label for="cvc">CVV:</label>
+      <input formControlName="cvc" id="cvc" required />
+    </div>
+    <button type="submit">Pay Now</button>
+  </form>
 </div>

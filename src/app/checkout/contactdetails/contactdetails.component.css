@@ -1,48 +1,61 @@
-.contact-container h3{
-    margin-top: 20px;
-    color: rgb(134, 85, 85);  
-    font-size: 38px;
-    font-weight: 300;
-    margin-bottom: 10px; 
+.contact-container {
+  animation: fadeIn 1s;
 }
 
-.form-group1 input{
-    margin-top: 10px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.form-group1 textarea{
-    margin-top: 10px;
+.contact-container h3 {
+  margin-top: 20px;
+  font-size: 38px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: lavenderblush;
 }
 
-.paymentform h2{
-    margin-top: 20px;
-    color: rgb(134, 85, 85);  
-    font-size: 38px;
-    font-weight: 300;
+.form-group1 input {
+  margin-top: 10px;
 }
 
-.paymentform p{
-    color: rgb(139, 137, 137);
+.form-group1 textarea {
+  margin-top: 10px;
+}
+
+.paymentform h2 {
+  margin-top: 20px;
+  font-size: 38px;
+  color: lavenderblush;
+  font-weight: 300;
+}
+
+.paymentform p {
+  color: lavenderblush;
 }
 
 .form-group label {
-    display: inline;
-  }
+  display: inline;
+}
 
-  .form-group input {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin-bottom: 10px;
-  }
+.form-group input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
 
-  .paymentform button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
+.paymentform button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}

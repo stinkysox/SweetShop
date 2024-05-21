@@ -1,9 +1,10 @@
-  <!-- Navigation bar -->
 <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand fs-2 px-4" routerLink=""
-      ><i class="bi bi-cake-fill"></i> SweetSpot</a
-    >
+    <img
+      class="nav-headimage"
+      src="https://i.postimg.cc/7ZJpqyTB/image.png"
+      alt="SweetSpot Logo"
+    />
     <button
       class="navbar-toggler"
       type="button"
@@ -29,6 +30,12 @@
         <li class="nav-item px-2">
           <a class="nav-link" routerLink="/cart">Cart</a>
         </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/store">Store</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/ordertracking">Track Order</a>
+        </li>
         <li class="nav-item dropdown px-2">
           <a
             class="nav-link dropdown-toggle"
@@ -47,8 +54,9 @@
                 class="dropdown-item text-danger"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                >LogOut</a
               >
+                LogOut
+              </a>
             </li>
           </ul>
         </li>
@@ -73,37 +81,54 @@
     </div>
   </div>
 </nav>
-  
-  <div class="cart-container">
-    <h1>My Cart <span class="fs-4">({{ totalItems }} items)</span> </h1>
-    <div class="cart-empty" *ngIf="cartItems.length === 0">
-      <h3>Your cart is currently empty.</h3>
-      <p>Looks like you have not any choice yet.</p>
-      <a routerLink=""><button type="button" class="btn btn-outline-danger">Go To Home</button></a>
-    </div>
-  
-    <div *ngFor="let item of cartItems" class="cart-item">
+
+<div class="cart-container">
+  <h1 class="my-cartheading">
+    My Cart <span class="fs-4">({{ totalItems }} items)</span>
+  </h1>
+  <div class="cart-empty" *ngIf="cartItems.length === 0">
+    <h3>Your cart is empty.</h3>
+    <p>Add Items to continue</p>
+    <a routerLink=""
+      ><button type="button" class="btn btn-outline-danger">Home</button></a
+    >
+  </div>
+
+  <div *ngFor="let item of cartItems" class="cart-item">
     <div>
-      <img [src]="item.image" alt="{{ item.title }}">
+      <img [src]="item.image" alt="{{ item.title }}" />
     </div>
     <div class="item-details">
       <h3>{{ item.title }}</h3>
       <h5>Quantity: {{ item.quantity }}</h5>
-      <input type="number" class="qty-input" [(ngModel)]="item.quantity" min="1">
+      <input
+        class="qty-input"
+        type="number"
+        [(ngModel)]="item.quantity"
+        min="1"
+      />
       <p class="fs-5 mt-2">Price: {{ item.price }} x {{ item.quantity }}</p>
-      <button type="button" class="btn btn-outline-danger" (click)="removeFromCart(item.id)">Remove</button>
+      <button
+        type="button"
+        class="btn btn-outline-danger"
+        (click)="removeFromCart(item.id)"
+      >
+        Remove
+      </button>
     </div>
-    </div>
-  
-    <div class="cart-totals mt-3 fs-2 text-center">
-      <p>Total Price: Rs.{{ calculateTotal() }}</p>
-    </div>
-
-    <div class="checkout-btn text-center">
-    <a routerLink="/checkout"><button [disabled]="cartItems.length === 0" type="button" class="btn btn-outline-dark">Checkout</button>
-  </a></div>
   </div>
 
+  <div class="cart-totals mt-3 fs-2 text-center">
+    <p>Total Price: Rs.{{ calculateTotal() }}</p>
+  </div>
 
-  <app-footer></app-footer>
-  
+  <div class="checkout-btn text-center">
+    <a routerLink="/checkout"
+      ><button [disabled]="cartItems.length === 0" type="button">
+        Checkout
+      </button>
+    </a>
+  </div>
+</div>
+
+<app-footer></app-footer>

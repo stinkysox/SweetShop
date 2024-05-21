@@ -1,12 +1,16 @@
 .checkout-container {
-    margin-right: 60px;
-  }
+  margin-right: 60px;
+}
 
-  .gap{
-    width: 10%;
-  }
-  
-  .order-details {
-    width: 40%;
-  }
-  
+.gap {
+  width: 10%;
+}
+
+.order-details {
+  width: 40%;
+}
+
+.nav-headimage {
+  height: 100px;
+  width: 100px;
+}

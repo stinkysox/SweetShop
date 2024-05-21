@@ -6,25 +6,24 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-storemanagement',
   templateUrl: './storemanagement.component.html',
-  styleUrl: './storemanagement.component.css'
+  styleUrl: './storemanagement.component.css',
 })
-export class StoremanagementComponent implements OnInit{
+export class StoremanagementComponent implements OnInit {
   @ViewChild('myModal') model: ElementRef | undefined;
   storeObj: Store = new Store();
   storeList: Store[] = [];
 
   ngOnInit(): void {
-    const localData = localStorage.getItem("angular17crud");
-    if(localData != null) {
-      this.storeList = JSON.parse(localData)
+    const localData = localStorage.getItem('angular17crud');
+    if (localData != null) {
+      this.storeList = JSON.parse(localData);
     }
   }
 
   openModel() {
-    
-    const model = document.getElementById("myModal");
+    const model = document.getElementById('myModal');
     if (model != null) {
-      model.style.display = 'block'
+      model.style.display = 'block';
     }
   }
 
@@ -36,32 +35,33 @@ export class StoremanagementComponent implements OnInit{
   }
 
   onDelete(item: Store) {
-    const isDelet = confirm("Are you sure want to Delete");
-    if(isDelet) {
-      const currentRecord =  this.storeList.findIndex(m=> m.id === this.storeObj.id);
-      this.storeList.splice(currentRecord,1);
+    const isDelet = confirm('Are you sure want to Delete');
+    if (isDelet) {
+      const currentRecord = this.storeList.findIndex(
+        (m) => m.id === this.storeObj.id
+      );
+      this.storeList.splice(currentRecord, 1);
       localStorage.setItem('angular17crud', JSON.stringify(this.storeList));
     }
   }
   onEdit(item: Store) {
-    this.storeObj =  item;
+    this.storeObj = item;
     this.openModel();
   }
 
   updateStud() {
-      const currentRecord =  this.storeList.find(m=> m.id === this.storeObj.id);
-      if(currentRecord != undefined) {
-        currentRecord.city = this.storeObj.city;
-        currentRecord.address =  this.storeObj.address;
-      };
-      localStorage.setItem('angular17crud', JSON.stringify(this.storeList));
-      this.closeModel()
+    const currentRecord = this.storeList.find((m) => m.id === this.storeObj.id);
+    if (currentRecord != undefined) {
+      currentRecord.city = this.storeObj.city;
+      currentRecord.address = this.storeObj.address;
+    }
+    localStorage.setItem('angular17crud', JSON.stringify(this.storeList));
+    this.closeModel();
   }
   saveStudent() {
     debugger;
-    const isLocalPresent = localStorage.getItem("angular17crud");
+    const isLocalPresent = localStorage.getItem('angular17crud');
     if (isLocalPresent != null) {
-      
       const oldArray = JSON.parse(isLocalPresent);
       this.storeObj.id = oldArray.length + 1;
       oldArray.push(this.storeObj);
@@ -74,10 +74,9 @@ export class StoremanagementComponent implements OnInit{
       this.storeList = newArr;
       localStorage.setItem('angular17crud', JSON.stringify(newArr));
     }
-    this.closeModel()
+    this.closeModel();
   }
 }
-
 
 export class Store {
   id: number;
@@ -89,5 +88,4 @@ export class Store {
     this.address = '';
     this.city = '';
   }
-
 }

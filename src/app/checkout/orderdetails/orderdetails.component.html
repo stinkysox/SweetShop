@@ -1,18 +1,17 @@
 <div class="order-container mt-4">
-<h3>Order Summary</h3>
-<hr>
-<div *ngFor="let item of cartItems" class="cart-item">
-  <div>
-    <img [src]="item.image" alt="{{ item.title }}">
+  <h3>Order Summary</h3>
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <div>
+      <img [src]="item.image" alt="{{ item.title }}" />
+    </div>
+    <div class="item-details">
+      <h4>{{ item.title }}</h4>
+      <h6>Quantity: {{ item.quantity }}</h6>
+      <p class="mt-2">Price: {{ item.price }} x {{ item.quantity }}</p>
+    </div>
   </div>
-  <div class="item-details">
-    <h4>{{ item.title }}</h4>
-    <h6>Quantity: {{ item.quantity }}</h6>
-    <p class=" mt-2">Price: {{ item.price }} x {{ item.quantity }}</p>
-  </div>
-  </div>
-<hr>
-<div class="cart-totals mt-3 fs-2 text-center">
+  <hr />
+  <div class="cart-totals mt-3 fs-2 text-center">
     <p>Total Price: Rs.{{ calculateTotal() }}</p>
   </div>
 </div>

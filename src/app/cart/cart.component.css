@@ -1,21 +1,30 @@
-.cart-container{
+.cart-container {
   margin: 20px;
   padding: auto;
+  animation: slideUp 1s;
 }
 
-.cart-container h1{
+.nav-headimage {
+  height: 100px;
+  width: 100px;
+}
+
+.cart-container h1 {
   text-align: center;
-  font-size: 50px;
+  font-size: 36px;
   margin: 10px;
   margin-bottom: 20px;
-  color: rgb(177, 110, 110);
+  color: lavenderblush;
 }
 
-.cart-empty{
+.cart-item {
+  background-color: lavenderblush;
+}
+.cart-empty {
   box-sizing: border-box;
   margin: auto;
   margin-top: 40px;
-  background-color:rgba(160, 212, 219,0.4);
+  background-color: rgba(160, 212, 219, 0.4);
   height: 250px;
   border-radius: 5%;
   width: 50%;
@@ -24,38 +33,94 @@
   padding: 20px;
 }
 
-.cart-empty h3{
+.cart-empty h3 {
   font-size: 30px;
   margin: 20px;
 }
 
-.cart-empty p{
+.cart-empty p {
   color: rgb(66, 65, 65);
 }
 
-.cart-empty button{
+.cart-empty button {
   margin-top: 40px;
+  background-color: lightseagreen;
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+.cart-empty button:hover {
+  background-color: lightcoral;
+}
+
+.cart-totals p {
+  color: lavenderblush;
 }
 
 .cart-item {
   width: 60%;
   margin: auto;
   border: 1px solid #ccc;
-  border-radius: 2%;
-  padding: 5px;
+  height: 280px;
+  border-radius: 10px;
+  padding: 10px;
   display: flex;
   margin-bottom: 10px;
   justify-content: space-around;
-  }
-  
-  .cart-item img {
-    width: 200px;
-    height: 200px;
-    margin-right: 10px;
-  }
-
-.qty-input{
-  background-color: var(--bg-body);
-  border-radius: 5%;
+  text-align: center;
+  align-items: center;
+  transition: all 1s ease;
 }
-  
+
+.cart-item:hover {
+  transform: scale(0.9);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+  background-color: lavender;
+}
+
+.cart-item img {
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+}
+
+.cart-empty {
+  background-color: lavenderblush;
+}
+
+.checkout-btn button {
+  background-color: lightseagreen;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: all 0.6s ease;
+}
+
+.checkout-btn button:hover {
+  background-color: rgb(175, 175, 253);
+}
+
+.qty-input {
+  outline: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: lavenderblush;
+  color: black;
+  font-weight: bold;
+  border: 1px solid lightgray;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1000px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -15,8 +15,8 @@ import { CookiesComponent } from './products/cookies/cookies.component';
 import { AnniversaryComponent } from './customize/wedding/anniversary.component';
 import { ShowerComponent } from './customize/birthday/shower.component';
 import { CartoonsComponent } from './customize/themecake/cartoons.component';
-import { DiwaliComponent } from './customize/newyear/diwali.component';
-import { CarsbikesComponent } from './customize/christmas/carsbikes.component';
+import { DiwaliComponent } from './customize/diwali/diwali.component';
+import { CarsbikesComponent } from './customize/carsbikes/carsbikes.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrdertrackingComponent } from './ordertracking/ordertracking.component';
 import { StoremanagementComponent } from './storemanagement/storemanagement.component';
@@ -41,11 +41,11 @@ const routes: Routes = [
     path: 'customize',
     component: CustomizeComponent,
     children: [
-      { path: 'anniversary', component: AnniversaryComponent },
-      { path: 'shower', component: ShowerComponent },
-      { path: 'cartoons', component: CartoonsComponent },
-      { path: 'diwali', component: DiwaliComponent },
-      { path: 'carsbikes', component: CarsbikesComponent },
+      { path: 'wedding', component: AnniversaryComponent },
+      { path: 'birthday', component: ShowerComponent },
+      { path: 'themed', component: CartoonsComponent },
+      { path: 'newyear', component: DiwaliComponent },
+      { path: 'christmas', component: CarsbikesComponent },
     ],
   },
   { path: 'cart', component: CartComponent },

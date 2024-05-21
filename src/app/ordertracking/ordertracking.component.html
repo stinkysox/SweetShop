@@ -1,9 +1,10 @@
- <!-- Navigation bar -->
- <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand fs-2 px-4" routerLink=""
-      ><i class="bi bi-cake-fill"></i> SweetSpot</a
-    >
+    <img
+      class="nav-headimage"
+      src="https://i.postimg.cc/7ZJpqyTB/image.png"
+      alt="SweetSpot Logo"
+    />
     <button
       class="navbar-toggler"
       type="button"
@@ -29,6 +30,12 @@
         <li class="nav-item px-2">
           <a class="nav-link" routerLink="/cart">Cart</a>
         </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/store">Store</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/ordertracking">Track Order</a>
+        </li>
         <li class="nav-item dropdown px-2">
           <a
             class="nav-link dropdown-toggle"
@@ -47,8 +54,9 @@
                 class="dropdown-item text-danger"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                >LogOut</a
               >
+                LogOut
+              </a>
             </li>
           </ul>
         </li>
@@ -74,41 +82,52 @@
   </div>
 </nav>
 
-<h1>Order Tracking</h1>
+<h1 class="main-heading">Order Tracking</h1>
 
 <div class="flex">
+  <div id="m_map" style="height: 500px"></div>
 
-<div id="m_map" style="height: 500px;"></div>
-
-<div class="map-details">
-<div class="start">
-    <label for="start" class="fs-3">Start:</label>
-    <input type="text" class="form-control mt-1" id="start floatingInputGroup1" placeholder="Enter starting location">
-</div>
-<div class="end">
-    <label for="end" class="fs-3">End:</label>
-    <input type="text" class="form-control mt-1" id="end floatingInputGroup1" placeholder="Enter destination">   
-</div>
-<button type="button" class="btn route btn-outline-primary" (click)="calculateAndDisplayRoute()">Get Route</button>
-<div *ngIf="!error" class="distance">
-    <span class="fs-3">Distance:</span> {{ distance }}
-</div>
-<div *ngIf="!error" class="duration">
-    <span class="fs-3">Duration:</span> {{ duration }}
-</div>
-<div>
-  Order Status: Delivered
-</div>
-</div>
-
+  <div class="map-details">
+    <div class="start">
+      <label for="start" class="fs-3">Start:</label>
+      <input
+        type="text"
+        class="form-control mt-1"
+        id="start floatingInputGroup1"
+        placeholder="Enter starting location"
+      />
+    </div>
+    <div class="end">
+      <label for="end" class="fs-3">End:</label>
+      <input
+        type="text"
+        class="form-control mt-1"
+        id="end floatingInputGroup1"
+        placeholder="Enter destination"
+      />
+    </div>
+    <button
+      type="button"
+      class="btn route btn-outline-primary"
+      (click)="calculateAndDisplayRoute()"
+    >
+      Get Route
+    </button>
+    <div *ngIf="!error" class="distance">
+      <span class="fs-3">Distance:</span> {{ distance }}
+    </div>
+    <div *ngIf="!error" class="duration">
+      <span class="fs-3">Duration:</span> {{ duration }}
+    </div>
+    <div>Order Status: Delivered</div>
+  </div>
 </div>
 <div class="popup" *ngIf="isPopupVisible">
-<!-- <div class="popup"> -->
-    <div class="popup-content">
-      <h2>Your Order Has Been Delivered!</h2>
-      <button (click)="closePopup()">Close</button>
-    </div>
+  <!-- <div class="popup"> -->
+  <div class="popup-content">
+    <h2>Your Order Has Been Delivered!</h2>
+    <button (click)="closePopup()">Close</button>
   </div>
+</div>
 
-  <app-footer></app-footer>
-  
+<app-footer></app-footer>

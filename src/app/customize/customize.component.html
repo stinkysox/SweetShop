@@ -30,6 +30,12 @@
         <li class="nav-item px-2">
           <a class="nav-link" routerLink="/cart">Cart</a>
         </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/store">Store</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink="/ordertracking">Track Order</a>
+        </li>
         <li class="nav-item dropdown px-2">
           <a
             class="nav-link dropdown-toggle"
@@ -80,21 +86,21 @@
     <h1 class="product-heading">Categories</h1>
     <ul>
       <li>
-        <button [routerLink]="['/customize', 'anniversary']">
-          Wedding Cakes
+        <button [routerLink]="['/customize', 'wedding']">Wedding Cakes</button>
+      </li>
+      <li>
+        <button [routerLink]="['/customize', 'birthday']">
+          Birthday Cakes
         </button>
       </li>
       <li>
-        <button [routerLink]="['/customize', 'shower']">Birthday Cakes</button>
+        <button [routerLink]="['/customize', 'themed']">Theme</button>
       </li>
       <li>
-        <button [routerLink]="['/customize', 'cartoons']">Theme</button>
+        <button [routerLink]="['/customize', 'newyear']">New Year</button>
       </li>
       <li>
-        <button [routerLink]="['/customize', 'diwali']">New Year</button>
-      </li>
-      <li>
-        <button [routerLink]="['/customize', 'carsbikes']">Christmas</button>
+        <button [routerLink]="['/customize', 'christmas']">Christmas</button>
       </li>
     </ul>
   </div>
